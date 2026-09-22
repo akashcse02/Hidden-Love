@@ -1,0 +1,1 @@
+import mongoose from "mongoose";const s=new mongoose.Schema({conversation:{type:mongoose.Schema.Types.ObjectId,ref:"Conversation"},sender:{type:mongoose.Schema.Types.ObjectId,ref:"User"},receiver:{type:mongoose.Schema.Types.ObjectId,ref:"User"},text:{type:String,maxlength:5000},readAt:Date},{timestamps:true});export default mongoose.model("Message",s);

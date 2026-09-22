@@ -1,0 +1,1 @@
+import{Router}from"express";import{auth}from"../middleware/auth.js";import{list,open,messages}from"../controllers/chat.js";const r=Router();r.get("/conversations",auth,list);r.post("/conversations",auth,open);r.get("/conversations/:id/messages",auth,messages);export default r;

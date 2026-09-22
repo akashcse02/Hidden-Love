@@ -1,0 +1,2 @@
+import mongoose from "mongoose";
+const s=new mongoose.Schema({author:{type:mongoose.Schema.Types.ObjectId,ref:"User",required:true},caption:{type:String,maxlength:2200},media:[{fileId:mongoose.Schema.Types.ObjectId,type:{type:String,enum:["image","video"]},mime:String,filename:String}],likes:[{type:mongoose.Schema.Types.ObjectId,ref:"User"}],comments:[{user:{type:mongoose.Schema.Types.ObjectId,ref:"User"},text:{type:String,maxlength:1000},createdAt:{type:Date,default:Date.now}}]},{timestamps:true});export default mongoose.model("Post",s);
